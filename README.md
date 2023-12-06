@@ -35,7 +35,7 @@ Från en fysisk Device som består av en DHT22 sensor kopplad till en ESP32 PCB 
 
 ### _Databasen:_
 
-![Alt text](image-5.png)
+![Alt text](image-7.png)
 
 ### _Grafana:_
 
