@@ -1,6 +1,7 @@
 # STM32TempSensor
 
 Under vintern sjunker temperaturen och luftfuktigheten utomhus såväl som inomhus. Det förändrade inomhusklimatet skapar inte bara obehag för mig, men det påfrestar mina växter avsevärt mycket. Vissa växter verkar ta skada trotts regelbunden bevattning och så mycket dagsljus som dagen tillåter, därför tittar det här projektet på hur temperaturen och luftfuktigheten kan påverka inomhusväxters hälsa.
+Olika källor påstår att "optimal luftfuktighet för inomhus-klimat bör ligga mellan 30% och 60%", jag misstänker att luftfuktigheten är lägre än 30%.
 
 Från en fysisk Device som består av en DHT22 sensor kopplad till en ESP32 PCB skickas data över WIFI till AWS IoT Core, sen lagras mätvärden i en TimeStream databas. Genom att skapa denna "Device to Cloud"-lösning kan jag samla in temperatur och luftfuktighet inomhus och lagra data i molnet, där jag vidare kan hämta data och skapa grafer i visualiseringsverktyget Grafana. För att skydda känsliga lösenord och certifikat separerades dessa från huvudkoden i en egen fil som sen döljs med hjälp av gitignore.
 
@@ -38,7 +39,7 @@ Från en fysisk Device som består av en DHT22 sensor kopplad till en ESP32 PCB 
 
 ### _Databasen:_
 
-I TimeStream korttids lagras temperatur- och luftfuktighets värden tillsammans med device_id och en timestamp som visar tiden mätningen gjordes.
+I TimeStream korttids lagras temperatur- (grader Celsius) och luftfuktighets värden (luftfuktighet i procent) tillsammans med device_id och en timestamp som visar tiden mätningen gjordes.
 
 ![Alt text](image-7.png)
 
@@ -57,3 +58,8 @@ Tanken var att kunna låta min Device mäta och skicka data till AWS utan att va
 I AWS stötte jag på hinder med att använda DynamoDB för lagring av data och sen hämta data till visualiseringsverktyget Grafana. Eftersom detta inte fungerade så bestämde jag mig för att i stället använda TimeStream för att lagra data och koppla på Grafana externt för visualiseringen.
 
 Eftersom jag valde att arbeta med TimeStream i stället för DynamoDB så bytte jag region från Stockholm till Irland i AWS. Jag valde att samla alla mina tjänster i AWS region Irland för att underlätta översikten av projektet, men detta relaterade i att tiden visar en timma fel då Stockholm ligger en timma före Irland.
+
+
+### Slutsats
+
+Mätvärdet av luftfuktighet låg strax över 20% i samtliga av mina mätningar, vilket bekräftade min initiala misstanke om en lägre luftfuktighet än det rekommenderade riktvärdet.
