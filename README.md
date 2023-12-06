@@ -1,8 +1,8 @@
-# Portfolioarbete STM32TempSensor
+# STM32TempSensor
 
-## Use case
+Under vintern sjunker temperaturen och luftfuktigheten utomhus såväl som innomhus. Det förändrade innomhusklimatet skapar inte bara obehag för mig, men det påfrestar mina växter avsevärt mycket. Vissa växter verkar ta skada trotts regelbunden bevattning och så myckat dagsljus som dagen tillåter, därför tittar det här projektet på hur temperaturen och luftfuktigheten kan påverka innomhusväxters hälsa.
 
-Att skapa en D2C- (Device to Cloud) lösning som ska samla in mät-data från en DHT22 (temperatur- och luftfuktighetssensor) kopplad till ESP32 som skicka datat över WIFI till en AWS IoT Core, samt spara datat i en databas.
+Jag kommer skapa en D2C- (Device to Cloud) lösning som ska samla in mät-data från en DHT22 (temperatur- och luftfuktighetssensor) kopplad till ESP32 som skicka datat över WIFI till en AWS IoT Core, samt spara datat i en databas.
 
 
 ### _Hårdvaru-komponenter:_
