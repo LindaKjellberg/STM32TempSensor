@@ -22,7 +22,7 @@ Från en fysisk Device som består av en DHT22 sensor kopplad till en ESP32 PCB 
 - GPIO D4 med 10kOhm resistor till DHT22 pin 2
 - DHT22 pin 3 är inte kopplad
 
-![Alt text](image.png)
+![Alt text](image-2.png)
 
 ### _Mjukvarukomponenter:_
 - Arduino IDE
