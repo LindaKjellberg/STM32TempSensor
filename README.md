@@ -33,6 +33,13 @@ Från en fysisk Device som består av en DHT22 sensor kopplad till en ESP32 PCB 
 - TimeStreamDB
 - Grafana
 
+### _Databasen:_
+
+![Alt text](image-5.png)
+
+### _Grafana:_
+
+![Alt text](image-6.png)
 
 ### Motgångar och hinder
 
