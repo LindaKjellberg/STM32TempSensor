@@ -12,7 +12,7 @@ Från en fysisk Device som består av en DHT22 sensor kopplad till en ESP32 PCB 
 - DHT22 (AM2302)
 - ESP32 micrococtroller med WIFI
 - 10 kOhm resistor
-- Strömkälla (USB kabel)
+- Strömkälla (USB kabel till min laptop)
 - Jumperkablar
 
 ![Alt text](image-3.png)
@@ -39,12 +39,14 @@ Från en fysisk Device som består av en DHT22 sensor kopplad till en ESP32 PCB 
 ### _Databasen:_
 
 I TimeStream lagras temperatur- och luftfuktighets värden tillsammans med device_id och en timestamp som visar tiden mätningen gjordes.
+
 ![Alt text](image-7.png)
 
 
 ### _Grafana:_
 
 Jag använde Grafana för att visualisera den insamlade datan i grafer:
+
 ![Alt text](image-6.png)
 
 
