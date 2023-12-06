@@ -17,6 +17,7 @@ Från en fysisk Device som består av en DHT22 sensor kopplad till en ESP32 PCB 
 
 ![Alt text](image-3.png)
 
+
 ### _Kopplingsschema:_
 
 - (+) 3.3V pin till DHT22 pin 1
@@ -26,25 +27,29 @@ Från en fysisk Device som består av en DHT22 sensor kopplad till en ESP32 PCB 
 
 ![Alt text](image-2.png)
 
+
 ### _Mjukvarukomponenter:_
 - Arduino IDE
 - AWS IoT Core
-- DynamoDB
+- (DynamoDB)
 - TimeStreamDB
-- Grafana
+- Visualisering med Grafana 
+
 
 ### _Databasen:_
 
+I TimeStream lagras temperatur- och luftfuktighets värden tillsammans med device_id och en timestamp som visar tiden mätningen gjordes.
 ![Alt text](image-7.png)
+
 
 ### _Grafana:_
 
+Jag använde Grafana för att visualisera den insamlade datan i grafer:
 ![Alt text](image-6.png)
+
 
 ### Motgångar och hinder
 
-Tanken var att kunna låta min Device mäta och skicka data till AWS utan att vara inkopplad i datorn, men jag fick inte strömvörsörjningen att fungera. 
+Tanken var att kunna låta min Device mäta och skicka data till AWS utan att vara inkopplad i datorn, men jag fick inte strömförsörjningen att fungera. 
 
 I AWS stötte jag på hinder med DynamoDB region
-
-Lambda funktion 
