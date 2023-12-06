@@ -12,7 +12,7 @@ Från en fysisk Device som består av en DHT22 sensor kopplad till en ESP32 PCB 
 - DHT22 (AM2302)
 - ESP32 micrococtroller med WIFI
 - 10 kOhm resistor
-- Strömkälla (USB kabel till min laptop)
+- Strömkälla (USB-kabel till min laptop)
 - Jumperkablar
 
 ![Alt text](image-3.png)
@@ -52,6 +52,8 @@ Jag använde Grafana för att visualisera den insamlade datan i grafer:
 
 ### Motgångar och hinder
 
-Tanken var att kunna låta min Device mäta och skicka data till AWS utan att vara inkopplad i datorn, men jag fick inte strömförsörjningen att fungera. 
+Tanken var att kunna låta min Device mäta och skicka data till AWS utan att vara inkopplad i datorn, men jag fick inte strömförsörjningen att fungera med en power bank som var den fristående strömkälla jag hade att använda. Jag ville att lösningen skulle vara "portabel", och i efterhand ångrar jag att jag inte testade att koppla in USB-kabeln i vägguttaget för att på så sätt kunna testa lösningen via nätverksporten.
 
-I AWS stötte jag på hinder med DynamoDB region
+I AWS stötte jag på hinder med att använda DynamoDB för lagring av data och sen hämta data till visualiseringsverktyget Grafana. Eftersom detta inte fungerade så bestämde jag mig för att i stället använda TimeStream för att lagra data och koppla på Grafana externt för visualiseringen.
+
+Eftersom jag valde att arbeta med TimeStream i stället för DynamoDB så bytte jag region från Stockholm till Irland i AWS. Jag valde att samla alla mina tjänster i AWS region Irland för att underlätta översikten av projektet, men detta relaterade i att tiden visar en timma fel då Stockholm ligger en timma före Irland.
