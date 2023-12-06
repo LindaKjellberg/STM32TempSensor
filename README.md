@@ -13,7 +13,7 @@ Från en fysisk Device som består av en DHT22 sensor kopplad till en ESP32 PCB 
 - Strömkälla (USB kabel)
 - Jumperkablar
 
-![Alt text](image-1.png)
+![Alt text](image-3.png)
 
 ### _Kopplingsschema:_
 
