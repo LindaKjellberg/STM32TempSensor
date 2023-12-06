@@ -5,7 +5,7 @@ Olika källor påstår att "optimal luftfuktighet för inomhus-klimat bör ligga
 
 Från en fysisk Device som består av en DHT22 sensor kopplad till en ESP32 PCB skickas data över WIFI till AWS IoT Core, sen lagras mätvärden i en TimeStream databas. Genom att skapa denna "Device to Cloud"-lösning kan jag samla in temperatur och luftfuktighet inomhus och lagra data i molnet, där jag vidare kan hämta data och skapa grafer i visualiseringsverktyget Grafana. För att skydda känsliga lösenord och certifikat separerades dessa från huvudkoden i en egen fil som sen döljs med hjälp av gitignore.
 
-![Alt text](image-4.png)
+![Alt text](image-8.png)
 
 
 ### _Hårdvaru-komponenter:_
